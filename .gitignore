@@ -1,0 +1,28 @@
+.fuse_*
+.venv
+.svn/
+.fuse_*
+// Latex stuff
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.log
+*.out
+*.synctex.gz
+*.toc
+*.pdf
+*.thm
+.vim/bundle/*
+// vim-stuff
+*.swp
+*.swn
+*.swo
+// python-stuff
+*.pyc
+
+// xmonad stuff
+xmonad.errors
+xmonad.hi
+xmonad.o
+xmonad-x86_64-linux

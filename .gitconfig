@@ -1,0 +1,29 @@
+[user]
+	email = lewinzki@gmail.com
+	name = Thomas Jensen
+[alias]
+    a = add -A
+    s = status -s
+    cm = commit -m
+    cam = commit -am
+    co = checkout
+    cob = checkout -b
+    ca = commit -a
+    c = commit
+    b = branch
+    ba = branch -a
+    f = fetch
+    pu = push
+    fb = !git checkout -b $1 master
+    zip = archive --format=zip -9
+[color]
+    branch = auto
+    diff = auto
+    status = auto
+[merge]
+    tool = kdiff3
+[core]
+    excludesfile = ~/.gitignore
+    editor = vim
+[push]
+    default = simple

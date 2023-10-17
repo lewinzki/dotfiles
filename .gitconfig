@@ -1,29 +1,27 @@
-[user]
-	email = lewinzki@gmail.com
-	name = Thomas Jensen
 [alias]
     a = add -A
     s = status -s
     cm = commit -m
+    ca = commit --amend
     cam = commit -am
     co = checkout
     cob = checkout -b
-    ca = commit -a
+    cop = "!git checkout $1 && git pull origin"
     c = commit
+    ri = rebase --interactive
+    rc = rebase --continue
+    rs = rebase --skip
+    ra = rebase --abort
     b = branch
     ba = branch -a
     f = fetch
     pu = push
-    fb = !git checkout -b $1 master
-    zip = archive --format=zip -9
-[color]
-    branch = auto
-    diff = auto
-    status = auto
-[merge]
-    tool = kdiff3
-[core]
-    excludesfile = ~/.gitignore
-    editor = vim
-[push]
-    default = simple
+    prune-origin = remote prune origin
+    branch-name = "!git rev-parse --abbrev-ref HEAD"
+    rebase-master = !CURRENT=$(git branch-name) && git cop master && git co $CURRENT && git rebase master
+    pub = "!git push -u origin $(git branch-name)"
+    changes = "!git log --pretty=oneline $(git describe --tags --abbrev=0)..master"
+    wipr = for-each-ref --sort='committerdate:iso8601' --format=' %(color:yellow)%(committerdate:relative)%09%(color:white)%(refname:short)' refs/remotes/origin
+    wip = for-each-ref --sort='committerdate:iso8601' --format=' %(color:yellow)%(committerdate:relative)%09%(color:white)%(refname:short)' refs/heads/
+[http]
+	sslBackend = schannel
